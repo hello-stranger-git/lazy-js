@@ -1,0 +1,6 @@
+document.documentElement.scrollTop(页面向上滚出去的高度)
+document.documentElement.clientHeight(页面可是区域的高度)
+document.documentElement.scrollHeight(页面的总高度)
+页面向上滚出去的高度+页面可使区域的高度=页面的总高度
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="content">判断滚动条是否到了底部</div>
+</body>
+</html>
+<script>
+
+  //滚动条滚动触发事件
+  window.addEventListener("scroll",function(){
+    //页面向上滚出去的高度
+    let scrollTop = document.documentElement.scrollTop;
+    //当前可视区的高度
+    let clientHeight = document.documentElement.clientHeight;
+    //整个页面的高度
+    let scrollHeight = document.documentElement.scrollHeight;
+    console.log(scrollHeight-clientHeight-scrollTop)
+    // scrollHeight-clientHeight-scrollTop(计算滚动条距离底部的距离)
+    if(scrollHeight-clientHeight-scrollTop === 0){//当距离底部的距离等于零的时候，将滚动条在拉回顶部(实际开发中，里面可以放置数据请求，从而实现懒加载)
+      document.documentElement.scrollTop = 0
+    }
+  })
+</script>
+<style>
+  html,body{
+    padding: 0;
+    margin: 0;
+  }
+  .content{
+    height: 1000px;
+    background-color: red;
+  }
+</style>
